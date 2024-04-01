@@ -1,4 +1,10 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://hdelaunay.fr/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Hervé Delaunay'
 theme = 'PaperMod'
+paginate = '20'
+
+[params]
+  [params.homeInfoParams]
+    Title = 'Bonjour !'
+    Content = 'Here I write about technical subjects that interests me.'
