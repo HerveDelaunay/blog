@@ -8,3 +8,9 @@ paginate = '20'
   [params.homeInfoParams]
     Title = 'Bonjour !'
     Content = 'Here I write about technical subjects that interests me.'
+  [[params.socialIcons]]
+    name = 'Github'
+    url = 'https://github.com/HerveDelaunay'
+  [[params.socialIcons]]
+    name = 'LinkedIn'
+    url = 'https:/linkedin.com/in/hervé-delaunay/'
