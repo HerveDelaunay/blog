@@ -14,3 +14,44 @@ paginate = '20'
   [[params.socialIcons]]
     name = 'LinkedIn'
     url = 'https:/linkedin.com/in/hervé-delaunay/'
+  comments = true   
+
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[fuseOpts]
+  isCaseSensitive = false
+  shouldSort = true
+  location = 0
+  distance = 1000
+  threshold = 0.4
+  minMatchCharLength = 0
+  keys = ["title", "permalink", "summary", "content"]
+
+[menu]
+  [[menu.main]]
+    identifier = "About"
+    name = "About"
+    url = "/aboutme/"
+    weight = 10
+  [[menu.main]]
+    identifier = "Tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 20
+  [[menu.main]]
+    identifier = "Index"
+    name = "Index"
+    url = "/archives/"
+    weight = 30
+  # [[menu.main]]
+  #   identifier = "Articles"
+  #   name = "Articles"
+  #   url = "/tags/article/"
+  #   weight = 40
+  [[menu.main]]
+    identifier = "Search"
+    name = "Search"
+    url = "/search/"
+    weight = 50
