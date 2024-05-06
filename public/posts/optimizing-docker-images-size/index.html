@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Optimizing Docker Images Size | Hervé Delaunay</title>
+<meta name="keywords" content="docker">
+<meta name="description" content="When you try to optimize the size of an image it is possible to display the size of every layers :
+docker history &lt;image-id&gt; For example :
+(ins)❯ docker history 7383c266ef25 IMAGE CREATED CREATED BY SIZE COMMENT 7383c266ef25 12 days ago CMD [&#34;nginx&#34; &#34;-g&#34; &#34;daemon off;&#34;] 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago STOPSIGNAL SIGQUIT 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago EXPOSE map[80/tcp:{}] 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago ENTRYPOINT [&#34;/docker-entrypoint.sh&#34;] 0B buildkit.">
+<meta name="author" content="">
+<link rel="canonical" href="https://hdelaunay.fr/posts/optimizing-docker-images-size/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://hdelaunay.fr/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://hdelaunay.fr/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://hdelaunay.fr/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://hdelaunay.fr/apple-touch-icon.png">
+<link rel="mask-icon" href="https://hdelaunay.fr/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://hdelaunay.fr/posts/optimizing-docker-images-size/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Optimizing Docker Images Size" />
+<meta property="og:description" content="When you try to optimize the size of an image it is possible to display the size of every layers :
+docker history &lt;image-id&gt; For example :
+(ins)❯ docker history 7383c266ef25 IMAGE CREATED CREATED BY SIZE COMMENT 7383c266ef25 12 days ago CMD [&#34;nginx&#34; &#34;-g&#34; &#34;daemon off;&#34;] 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago STOPSIGNAL SIGQUIT 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago EXPOSE map[80/tcp:{}] 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago ENTRYPOINT [&#34;/docker-entrypoint.sh&#34;] 0B buildkit." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hdelaunay.fr/posts/optimizing-docker-images-size/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-05-06T15:27:12+02:00" />
+<meta property="article:modified_time" content="2024-05-06T15:27:12+02:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Optimizing Docker Images Size"/>
+<meta name="twitter:description" content="When you try to optimize the size of an image it is possible to display the size of every layers :
+docker history &lt;image-id&gt; For example :
+(ins)❯ docker history 7383c266ef25 IMAGE CREATED CREATED BY SIZE COMMENT 7383c266ef25 12 days ago CMD [&#34;nginx&#34; &#34;-g&#34; &#34;daemon off;&#34;] 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago STOPSIGNAL SIGQUIT 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago EXPOSE map[80/tcp:{}] 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago ENTRYPOINT [&#34;/docker-entrypoint.sh&#34;] 0B buildkit."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://hdelaunay.fr/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Optimizing Docker Images Size",
+      "item": "https://hdelaunay.fr/posts/optimizing-docker-images-size/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Optimizing Docker Images Size",
+  "name": "Optimizing Docker Images Size",
+  "description": "When you try to optimize the size of an image it is possible to display the size of every layers :\ndocker history \u0026lt;image-id\u0026gt; For example :\n(ins)❯ docker history 7383c266ef25 IMAGE CREATED CREATED BY SIZE COMMENT 7383c266ef25 12 days ago CMD [\u0026#34;nginx\u0026#34; \u0026#34;-g\u0026#34; \u0026#34;daemon off;\u0026#34;] 0B buildkit.dockerfile.v0 \u0026lt;missing\u0026gt; 12 days ago STOPSIGNAL SIGQUIT 0B buildkit.dockerfile.v0 \u0026lt;missing\u0026gt; 12 days ago EXPOSE map[80/tcp:{}] 0B buildkit.dockerfile.v0 \u0026lt;missing\u0026gt; 12 days ago ENTRYPOINT [\u0026#34;/docker-entrypoint.sh\u0026#34;] 0B buildkit.",
+  "keywords": [
+    "docker"
+  ],
+  "articleBody": "When you try to optimize the size of an image it is possible to display the size of every layers :\ndocker history For example :\n(ins)❯ docker history 7383c266ef25 IMAGE CREATED CREATED BY SIZE COMMENT 7383c266ef25 12 days ago CMD [\"nginx\" \"-g\" \"daemon off;\"] 0B buildkit.dockerfile.v0 12 days ago STOPSIGNAL SIGQUIT 0B buildkit.dockerfile.v0 12 days ago EXPOSE map[80/tcp:{}] 0B buildkit.dockerfile.v0 12 days ago ENTRYPOINT [\"/docker-entrypoint.sh\"] 0B buildkit.dockerfile.v0 12 days ago COPY 30-tune-worker-processes.sh /docker-ent… 4.62kB buildkit.dockerfile.v0 12 days ago COPY 20-envsubst-on-templates.sh /docker-ent… 3.02kB buildkit.dockerfile.v0 12 days ago COPY 15-local-resolvers.envsh /docker-entryp… 336B buildkit.dockerfile.v0 12 days ago COPY 10-listen-on-ipv6-by-default.sh /docker… 2.12kB buildkit.dockerfile.v0 12 days ago COPY docker-entrypoint.sh / # buildkit 1.62kB buildkit.dockerfile.v0 12 days ago RUN /bin/sh -c set -x \u0026\u0026 groupadd --syst… 113MB buildkit.dockerfile.v0 12 days ago ENV PKG_RELEASE=1~bookworm 0B buildkit.dockerfile.v0 12 days ago ENV NJS_RELEASE=2~bookworm 0B buildkit.dockerfile.v0 12 days ago ENV NJS_VERSION=0.8.4 0B buildkit.dockerfile.v0 12 days ago ENV NGINX_VERSION=1.25.5 0B buildkit.dockerfile.v0 12 days ago LABEL maintainer=NGINX Docker Maintainers ",
+  "wordCount" : "196",
+  "inLanguage": "en",
+  "datePublished": "2024-05-06T15:27:12+02:00",
+  "dateModified": "2024-05-06T15:27:12+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://hdelaunay.fr/posts/optimizing-docker-images-size/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hervé Delaunay",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hdelaunay.fr/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://hdelaunay.fr/" accesskey="h" title="Hervé Delaunay (Alt + H)">Hervé Delaunay</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://hdelaunay.fr/aboutme/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hdelaunay.fr/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hdelaunay.fr/archives/" title="Index">
+                    <span>Index</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hdelaunay.fr/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Optimizing Docker Images Size
+    </h1>
+    <div class="post-meta"><span title='2024-05-06 15:27:12 +0200 CEST'>May 6, 2024</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>When you try to optimize the size of an image it is possible to display the size of every layers :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker history &lt;image-id&gt;
+</span></span></code></pre></div><p>For example :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">(</span>ins<span style="color:#f92672">)</span>❯ docker history 7383c266ef25
+</span></span><span style="display:flex;"><span>IMAGE          CREATED       CREATED BY                                      SIZE      COMMENT
+</span></span><span style="display:flex;"><span>7383c266ef25   <span style="color:#ae81ff">12</span> days ago   CMD <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;nginx&#34;</span> <span style="color:#e6db74">&#34;-g&#34;</span> <span style="color:#e6db74">&#34;daemon off;&#34;</span><span style="color:#f92672">]</span>                0B        buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   STOPSIGNAL SIGQUIT                              0B        buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   EXPOSE map<span style="color:#f92672">[</span>80/tcp:<span style="color:#f92672">{}]</span>                           0B        buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   ENTRYPOINT <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;/docker-entrypoint.sh&#34;</span><span style="color:#f92672">]</span>            0B        buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   COPY 30-tune-worker-processes.sh /docker-ent…   4.62kB    buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   COPY 20-envsubst-on-templates.sh /docker-ent…   3.02kB    buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   COPY 15-local-resolvers.envsh /docker-entryp…   336B      buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   COPY 10-listen-on-ipv6-by-default.sh /docker…   2.12kB    buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   COPY docker-entrypoint.sh / <span style="color:#75715e"># buildkit          1.62kB    buildkit.dockerfile.v0</span>
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   RUN /bin/sh -c set -x     <span style="color:#f92672">&amp;&amp;</span> groupadd --syst…   113MB     buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   ENV PKG_RELEASE<span style="color:#f92672">=</span>1~bookworm                      0B        buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   ENV NJS_RELEASE<span style="color:#f92672">=</span>2~bookworm                      0B        buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   ENV NJS_VERSION<span style="color:#f92672">=</span>0.8.4                           0B        buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   ENV NGINX_VERSION<span style="color:#f92672">=</span>1.25.5                        0B        buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   LABEL maintainer<span style="color:#f92672">=</span>NGINX Docker Maintainers &lt;d…   0B        buildkit.dockerfile.v0
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   /bin/sh -c <span style="color:#75715e">#(nop)  CMD [&#34;bash&#34;]                 0B</span>
+</span></span><span style="display:flex;"><span>&lt;missing&gt;      <span style="color:#ae81ff">12</span> days ago   /bin/sh -c <span style="color:#75715e">#(nop) ADD file:4b1be1de1a1e5aa60…   74.8MB</span>
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://hdelaunay.fr/tags/docker/">Docker</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://hdelaunay.fr/">Hervé Delaunay</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -6,21 +6,16 @@
     <description>Recent content on Hervé Delaunay</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Apr 2024 16:01:32 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 06 May 2024 15:27:12 +0200</lastBuildDate>
     <atom:link href="https://hdelaunay.fr/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My Second Post</title>
-      <link>https://hdelaunay.fr/posts/my-second-post/</link>
-      <pubDate>Sat, 20 Apr 2024 16:01:32 +0200</pubDate>
-      <guid>https://hdelaunay.fr/posts/my-second-post/</guid>
-      <description>asdfkljashjdkdfg sdfgsdfkgjhds;fgkZZ</description>
-    </item>
-    <item>
-      <title>My First Post</title>
-      <link>https://hdelaunay.fr/posts/my-first-post/</link>
-      <pubDate>Mon, 01 Apr 2024 19:44:47 +0200</pubDate>
-      <guid>https://hdelaunay.fr/posts/my-first-post/</guid>
-      <description>This is my first post sqkljqmg qdg dq fgdsg</description>
+      <title>Optimizing Docker Images Size</title>
+      <link>https://hdelaunay.fr/posts/optimizing-docker-images-size/</link>
+      <pubDate>Mon, 06 May 2024 15:27:12 +0200</pubDate>
+      <guid>https://hdelaunay.fr/posts/optimizing-docker-images-size/</guid>
+      <description>When you try to optimize the size of an image it is possible to display the size of every layers :
+docker history &amp;lt;image-id&amp;gt; For example :
+(ins)❯ docker history 7383c266ef25 IMAGE CREATED CREATED BY SIZE COMMENT 7383c266ef25 12 days ago CMD [&amp;#34;nginx&amp;#34; &amp;#34;-g&amp;#34; &amp;#34;daemon off;&amp;#34;] 0B buildkit.dockerfile.v0 &amp;lt;missing&amp;gt; 12 days ago STOPSIGNAL SIGQUIT 0B buildkit.dockerfile.v0 &amp;lt;missing&amp;gt; 12 days ago EXPOSE map[80/tcp:{}] 0B buildkit.dockerfile.v0 &amp;lt;missing&amp;gt; 12 days ago ENTRYPOINT [&amp;#34;/docker-entrypoint.sh&amp;#34;] 0B buildkit.</description>
     </item>
     <item>
       <title></title>
