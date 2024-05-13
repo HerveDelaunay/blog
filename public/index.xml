@@ -6,8 +6,16 @@
     <description>Recent content on Hervé Delaunay</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 May 2024 15:27:12 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2024 21:46:33 +0200</lastBuildDate>
     <atom:link href="https://hdelaunay.fr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Routing Traffic Within Your Kubernetes Cluster : Ingress-Nginx Controller</title>
+      <link>https://hdelaunay.fr/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/</link>
+      <pubDate>Mon, 13 May 2024 21:46:33 +0200</pubDate>
+      <guid>https://hdelaunay.fr/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/</guid>
+      <description>I recently had to setup an Ingress in one of the Kubernetes cluster of my job, so I wrote a short explanation for my colleagues that are not aware of Kubernetes Ingresses and since it provide usefull explanations on it I figured I&amp;rsquo;ll also share it here :
+Classic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes microservices available outside the cluster. It routes incoming requests to the appropriate services, much like a traditional load balancer.</description>
+    </item>
     <item>
       <title>Optimizing Docker Images Size</title>
       <link>https://hdelaunay.fr/posts/optimizing-docker-images-size/</link>
