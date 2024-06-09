@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Harbor on Hervé Delaunay</title>
+    <link>https://hdelaunay.fr/tags/harbor/</link>
+    <description>Recent content in Harbor on Hervé Delaunay</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Jun 2024 22:24:35 +0200</lastBuildDate>
+    <atom:link href="https://hdelaunay.fr/tags/harbor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pull Images From Your Harbor Registry With Kubernetes</title>
+      <link>https://hdelaunay.fr/posts/pull-images-from-your-harbor-registry-with-kubernetes/</link>
+      <pubDate>Sun, 09 Jun 2024 22:24:35 +0200</pubDate>
+      <guid>https://hdelaunay.fr/posts/pull-images-from-your-harbor-registry-with-kubernetes/</guid>
+      <description>Pulling images from a private registry with kubernetes In this example I am going to use Harbor.
+For the sake of best practices and security we first have to create a robot account on harbor :
+Then select the harbor repo on which the robot account will have these permissions :
+You then have a confirmation message from harbor, keep the secret : we will register it into a kubernetes secret in our cluster.</description>
+    </item>
+  </channel>
+</rss>

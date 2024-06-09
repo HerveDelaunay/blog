@@ -6,8 +6,18 @@
     <description>Recent content in Kubernetes on Hervé Delaunay</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 May 2024 21:46:33 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 09 Jun 2024 22:24:35 +0200</lastBuildDate>
     <atom:link href="https://hdelaunay.fr/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pull Images From Your Harbor Registry With Kubernetes</title>
+      <link>https://hdelaunay.fr/posts/pull-images-from-your-harbor-registry-with-kubernetes/</link>
+      <pubDate>Sun, 09 Jun 2024 22:24:35 +0200</pubDate>
+      <guid>https://hdelaunay.fr/posts/pull-images-from-your-harbor-registry-with-kubernetes/</guid>
+      <description>Pulling images from a private registry with kubernetes In this example I am going to use Harbor.
+For the sake of best practices and security we first have to create a robot account on harbor :
+Then select the harbor repo on which the robot account will have these permissions :
+You then have a confirmation message from harbor, keep the secret : we will register it into a kubernetes secret in our cluster.</description>
+    </item>
     <item>
       <title>Routing Traffic Within Your Kubernetes Cluster : Ingress-Nginx Controller</title>
       <link>https://hdelaunay.fr/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/</link>

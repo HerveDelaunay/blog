@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://hdelaunay.fr/tags/harbor/</loc>
+    <lastmod>2024-06-09T22:24:35+02:00</lastmod>
+  </url><url>
     <loc>https://hdelaunay.fr/</loc>
-    <lastmod>2024-05-13T21:46:33+02:00</lastmod>
+    <lastmod>2024-06-09T22:24:35+02:00</lastmod>
+  </url><url>
+    <loc>https://hdelaunay.fr/tags/kubernetes/</loc>
+    <lastmod>2024-06-09T22:24:35+02:00</lastmod>
+  </url><url>
+    <loc>https://hdelaunay.fr/posts/</loc>
+    <lastmod>2024-06-09T22:24:35+02:00</lastmod>
+  </url><url>
+    <loc>https://hdelaunay.fr/posts/pull-images-from-your-harbor-registry-with-kubernetes/</loc>
+    <lastmod>2024-06-09T22:24:35+02:00</lastmod>
+  </url><url>
+    <loc>https://hdelaunay.fr/tags/</loc>
+    <lastmod>2024-06-09T22:24:35+02:00</lastmod>
   </url><url>
     <loc>https://hdelaunay.fr/tags/ingress/</loc>
     <lastmod>2024-05-13T21:46:33+02:00</lastmod>
   </url><url>
-    <loc>https://hdelaunay.fr/tags/kubernetes/</loc>
-    <lastmod>2024-05-13T21:46:33+02:00</lastmod>
-  </url><url>
-    <loc>https://hdelaunay.fr/posts/</loc>
-    <lastmod>2024-05-13T21:46:33+02:00</lastmod>
-  </url><url>
     <loc>https://hdelaunay.fr/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/</loc>
-    <lastmod>2024-05-13T21:46:33+02:00</lastmod>
-  </url><url>
-    <loc>https://hdelaunay.fr/tags/</loc>
     <lastmod>2024-05-13T21:46:33+02:00</lastmod>
   </url><url>
     <loc>https://hdelaunay.fr/tags/docker/</loc>
