@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Hervé Delaunay</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Jun 2024 22:24:35 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 22 Jun 2024 10:26:00 +0200</lastBuildDate>
     <atom:link href="https://hdelaunay.fr/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adding TLS to Your Ingress Traffic</title>
+      <link>https://hdelaunay.fr/posts/adding-tls-to-your-ingress-traffic/</link>
+      <pubDate>Sat, 22 Jun 2024 10:26:00 +0200</pubDate>
+      <guid>https://hdelaunay.fr/posts/adding-tls-to-your-ingress-traffic/</guid>
+      <description>Today at my job I managed to get our new product up and running on kubernetes, deployment and statefulsets are working but I wanted to test the app&amp;rsquo;s behavior while accessing it from the outside. As we have multiple services running on the cluster and as we want to secure the connection through TLS it is best to use an Ingress (resources and controllers). I already did the Ingress controller setup earlier, using Ingress-nginx-controller so I just had to create an Ingress-resources and I wanted to discuss about my process here.</description>
+    </item>
     <item>
       <title>Pull Images From Your Harbor Registry With Kubernetes</title>
       <link>https://hdelaunay.fr/posts/pull-images-from-your-harbor-registry-with-kubernetes/</link>
