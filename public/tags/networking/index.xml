@@ -10,9 +10,9 @@
     <atom:link href="https://hdelaunay.fr/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Which Cni Is Running in My Cluster ?</title>
-      <link>https://hdelaunay.fr/posts/which-cni-is-running-in-my-cluster-/</link>
+      <link>https://hdelaunay.fr/posts/which-cni-is-running-in-my-cluster/</link>
       <pubDate>Tue, 23 Jul 2024 22:28:12 +0200</pubDate>
-      <guid>https://hdelaunay.fr/posts/which-cni-is-running-in-my-cluster-/</guid>
+      <guid>https://hdelaunay.fr/posts/which-cni-is-running-in-my-cluster/</guid>
       <description>Today a colleague of mine who is new to Kubernetes asked me what was the CNI running on our production cluster, I knew the answer but I wanted to doublecheck, just to see if I could climb up to the source of truth.
 My first reflex was to search in the kube-system namespace for pods with a CNI-like name. And I quickly found what I was looking for :
 With this I was pretty sure Antrea was the chosen CNI, but I knew there were other ways to verify it.</description>
