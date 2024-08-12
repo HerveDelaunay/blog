@@ -6,13 +6,27 @@
     <description>Recent content in Tags on Hervé Delaunay</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jul 2024 22:28:12 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2024 22:23:13 +0200</lastBuildDate>
     <atom:link href="https://hdelaunay.fr/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Helm</title>
+      <link>https://hdelaunay.fr/tags/helm/</link>
+      <pubDate>Mon, 12 Aug 2024 22:23:13 +0200</pubDate>
+      <guid>https://hdelaunay.fr/tags/helm/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Kubernetes</title>
       <link>https://hdelaunay.fr/tags/kubernetes/</link>
-      <pubDate>Tue, 23 Jul 2024 22:28:12 +0200</pubDate>
+      <pubDate>Mon, 12 Aug 2024 22:23:13 +0200</pubDate>
       <guid>https://hdelaunay.fr/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Secret</title>
+      <link>https://hdelaunay.fr/tags/secret/</link>
+      <pubDate>Mon, 12 Aug 2024 22:23:13 +0200</pubDate>
+      <guid>https://hdelaunay.fr/tags/secret/</guid>
       <description></description>
     </item>
     <item>
