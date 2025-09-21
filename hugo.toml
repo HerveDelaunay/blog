@@ -2,56 +2,57 @@ baseURL = 'https://hdelaunay.fr/'
 languageCode = 'en-us'
 title = 'Hervé Delaunay'
 theme = 'PaperMod'
-paginate = '20'
 
+[pagination]
+pagerSize = 20
 [params]
-  [params.homeInfoParams]
-    Title = 'Bonjour !'
-    Content = 'Here I write about technical subjects that interests me.'
-  [[params.socialIcons]]
-    name = 'Github'
-    url = 'https://github.com/HerveDelaunay'
-  [[params.socialIcons]]
-    name = 'LinkedIn'
-    url = 'https:/linkedin.com/in/hervé-delaunay/'
-  comments = true   
+[params.homeInfoParams]
+Title = 'Hi !'
+Content = "Welcome to my blog. I'm Hervé, DevOps engineer with a deep passion for cloud native technologies. Here I mostly write about Kubernetes, Linux and DevOps"
+[[params.socialIcons]]
+name = 'Github'
+url = 'https://github.com/HerveDelaunay'
+[[params.socialIcons]]
+name = 'LinkedIn'
+url = 'https:/linkedin.com/in/hervé-delaunay/'
+comments = true
 
 
 [outputs]
-  home = ['HTML', 'RSS', 'JSON']
+home = ['HTML', 'RSS', 'JSON']
 
 [fuseOpts]
-  isCaseSensitive = false
-  shouldSort = true
-  location = 0
-  distance = 1000
-  threshold = 0.4
-  minMatchCharLength = 0
-  keys = ["title", "permalink", "summary", "content"]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 1000
+threshold = 0.4
+minMatchCharLength = 0
+keys = ["title", "permalink", "summary", "content"]
 
 [menu]
-  [[menu.main]]
-    identifier = "About"
-    name = "About"
-    url = "/aboutme/"
-    weight = 10
-  [[menu.main]]
-    identifier = "Tags"
-    name = "Tags"
-    url = "/tags/"
-    weight = 20
-  [[menu.main]]
-    identifier = "Index"
-    name = "Index"
-    url = "/archives/"
-    weight = 30
-  # [[menu.main]]
-  #   identifier = "Articles"
-  #   name = "Articles"
-  #   url = "/tags/article/"
-  #   weight = 40
-  [[menu.main]]
-    identifier = "Search"
-    name = "Search"
-    url = "/search/"
-    weight = 50
+[[menu.main]]
+identifier = "About"
+name = "About"
+url = "/aboutme/"
+weight = 10
+[[menu.main]]
+identifier = "Tags"
+name = "Tags"
+url = "/tags/"
+weight = 20
+[[menu.main]]
+identifier = "Index"
+name = "Index"
+url = "/archives/"
+weight = 30
+# [[menu.main]]
+#   identifier = "Articles"
+#   name = "Articles"
+#   url = "/tags/article/"
+#   weight = 40
+[[menu.main]]
+identifier = "Search"
+name = "Search"
+url = "/search/"
+weight = 50

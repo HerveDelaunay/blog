@@ -2,26 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Ingress on Hervé Delaunay</title>
-    <link>https://hdelaunay.fr/tags/ingress/</link>
+    <link>http://localhost:1313/tags/ingress/</link>
     <description>Recent content in Ingress on Hervé Delaunay</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 22 Jun 2024 10:26:00 +0200</lastBuildDate>
-    <atom:link href="https://hdelaunay.fr/tags/ingress/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ingress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adding TLS to Your Ingress Traffic</title>
-      <link>https://hdelaunay.fr/posts/adding-tls-to-your-ingress-traffic/</link>
+      <link>http://localhost:1313/posts/adding-tls-to-your-ingress-traffic/</link>
       <pubDate>Sat, 22 Jun 2024 10:26:00 +0200</pubDate>
-      <guid>https://hdelaunay.fr/posts/adding-tls-to-your-ingress-traffic/</guid>
-      <description>Today at my job I managed to get our new product up and running on kubernetes, deployment and statefulsets are working but I wanted to test the app&amp;rsquo;s behavior while accessing it from the outside. As we have multiple services running on the cluster and as we want to secure the connection through TLS it is best to use an Ingress (resources and controllers). I already did the Ingress controller setup earlier, using Ingress-nginx-controller so I just had to create an Ingress-resources and I wanted to discuss about my process here.</description>
+      <guid>http://localhost:1313/posts/adding-tls-to-your-ingress-traffic/</guid>
+      <description>&lt;p&gt;Today at my job I managed to get our new product up and running on kubernetes, deployment and statefulsets are working but I wanted to test the app&amp;rsquo;s behavior while accessing it from the outside. As we have multiple services running on the cluster and as we want to secure the connection through TLS it is best to use an Ingress (resources and controllers). I already did the Ingress controller setup earlier, using &lt;a href=&#34;https://kubernetes.github.io/ingress-nginx/&#34;&gt;Ingress-nginx-controller&lt;/a&gt; so I just had to create an Ingress-resources and I wanted to discuss about my process here.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Routing Traffic Within Your Kubernetes Cluster : Ingress-Nginx Controller</title>
-      <link>https://hdelaunay.fr/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/</link>
+      <link>http://localhost:1313/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/</link>
       <pubDate>Mon, 13 May 2024 21:46:33 +0200</pubDate>
-      <guid>https://hdelaunay.fr/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/</guid>
-      <description>I recently had to setup an Ingress in one of the Kubernetes cluster of my job, so I wrote a short explanation for my colleagues that are not aware of Kubernetes Ingresses and since it provide usefull explanations on it I figured I&amp;rsquo;ll also share it here :
-Classic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes microservices available outside the cluster. It routes incoming requests to the appropriate services, much like a traditional load balancer.</description>
+      <guid>http://localhost:1313/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/</guid>
+      <description>&lt;p&gt;I recently had to setup an Ingress in one of the Kubernetes cluster of my job, so I wrote a short explanation for my colleagues that are not aware of Kubernetes Ingresses and since it provide usefull explanations on it I figured I&amp;rsquo;ll also share it here :&lt;/p&gt;
+&lt;h2 id=&#34;classic-ingress-in-kubernetes&#34;&gt;Classic Ingress in Kubernetes&lt;/h2&gt;
+&lt;p&gt;An Ingress in Kubernetes is an object that makes microservices available outside the cluster. It routes incoming requests to the appropriate services, much like a traditional load balancer.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

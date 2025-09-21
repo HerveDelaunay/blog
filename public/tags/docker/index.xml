@@ -2,20 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Docker on Hervé Delaunay</title>
-    <link>https://hdelaunay.fr/tags/docker/</link>
+    <link>http://localhost:1313/tags/docker/</link>
     <description>Recent content in Docker on Hervé Delaunay</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 May 2024 15:27:12 +0200</lastBuildDate>
-    <atom:link href="https://hdelaunay.fr/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Optimizing Docker Images Size</title>
-      <link>https://hdelaunay.fr/posts/optimizing-docker-images-size/</link>
+      <link>http://localhost:1313/posts/optimizing-docker-images-size/</link>
       <pubDate>Mon, 06 May 2024 15:27:12 +0200</pubDate>
-      <guid>https://hdelaunay.fr/posts/optimizing-docker-images-size/</guid>
-      <description>When you try to optimize the size of an image it is possible to display the size of every layers :
-docker history &amp;lt;image-id&amp;gt; For example :
-(ins)❯ docker history 7383c266ef25 IMAGE CREATED CREATED BY SIZE COMMENT 7383c266ef25 12 days ago CMD [&amp;#34;nginx&amp;#34; &amp;#34;-g&amp;#34; &amp;#34;daemon off;&amp;#34;] 0B buildkit.dockerfile.v0 &amp;lt;missing&amp;gt; 12 days ago STOPSIGNAL SIGQUIT 0B buildkit.dockerfile.v0 &amp;lt;missing&amp;gt; 12 days ago EXPOSE map[80/tcp:{}] 0B buildkit.dockerfile.v0 &amp;lt;missing&amp;gt; 12 days ago ENTRYPOINT [&amp;#34;/docker-entrypoint.sh&amp;#34;] 0B buildkit.</description>
+      <guid>http://localhost:1313/posts/optimizing-docker-images-size/</guid>
+      <description>&lt;p&gt;When you try to optimize the size of an image it is possible to display the size of every layers :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker history &amp;lt;image-id&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For example :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;ins&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;❯ docker history 7383c266ef25
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;IMAGE          CREATED       CREATED BY                                      SIZE      COMMENT
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;7383c266ef25   &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   CMD &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;nginx&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-g&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;daemon off;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;                0B        buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   STOPSIGNAL SIGQUIT                              0B        buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   EXPOSE map&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;80/tcp:&lt;span style=&#34;color:#f92672&#34;&gt;{}]&lt;/span&gt;                           0B        buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   ENTRYPOINT &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/docker-entrypoint.sh&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;            0B        buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   COPY 30-tune-worker-processes.sh /docker-ent…   4.62kB    buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   COPY 20-envsubst-on-templates.sh /docker-ent…   3.02kB    buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   COPY 15-local-resolvers.envsh /docker-entryp…   336B      buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   COPY 10-listen-on-ipv6-by-default.sh /docker…   2.12kB    buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   COPY docker-entrypoint.sh / &lt;span style=&#34;color:#75715e&#34;&gt;# buildkit          1.62kB    buildkit.dockerfile.v0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   RUN /bin/sh -c set -x     &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; groupadd --syst…   113MB     buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   ENV PKG_RELEASE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;1~bookworm                      0B        buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   ENV NJS_RELEASE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;2~bookworm                      0B        buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   ENV NJS_VERSION&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;0.8.4                           0B        buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   ENV NGINX_VERSION&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;1.25.5                        0B        buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   LABEL maintainer&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;NGINX Docker Maintainers &amp;lt;d…   0B        buildkit.dockerfile.v0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   /bin/sh -c &lt;span style=&#34;color:#75715e&#34;&gt;#(nop)  CMD [&amp;#34;bash&amp;#34;]                 0B&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;missing&amp;gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; days ago   /bin/sh -c &lt;span style=&#34;color:#75715e&#34;&gt;#(nop) ADD file:4b1be1de1a1e5aa60…   74.8MB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

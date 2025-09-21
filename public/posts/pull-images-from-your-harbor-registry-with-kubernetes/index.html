@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Pull Images From Your Harbor Registry With Kubernetes | Hervé Delaunay</title>
 <meta name="keywords" content="kubernetes, harbor">
-<meta name="description" content="Pulling images from a private registry with kubernetes In this example I am going to use Harbor.
+<meta name="description" content="Pulling images from a private registry with kubernetes
+In this example I am going to use Harbor.
 For the sake of best practices and security we first have to create a robot account on harbor :
+
+
+
 Then select the harbor repo on which the robot account will have these permissions :
+
 You then have a confirmation message from harbor, keep the secret : we will register it into a kubernetes secret in our cluster.">
 <meta name="author" content="">
-<link rel="canonical" href="https://hdelaunay.fr/posts/pull-images-from-your-harbor-registry-with-kubernetes/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://hdelaunay.fr/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://hdelaunay.fr/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://hdelaunay.fr/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://hdelaunay.fr/apple-touch-icon.png">
-<link rel="mask-icon" href="https://hdelaunay.fr/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/posts/pull-images-from-your-harbor-registry-with-kubernetes/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.08f7d74f0ada0f975d29ae436285b61ed7a719d05f350cb888d00341642995a2.css" integrity="sha256-CPfXTwraD5ddKa5DYoW2HtenGdBfNQy4iNADQWQplaI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://hdelaunay.fr/posts/pull-images-from-your-harbor-registry-with-kubernetes/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/pull-images-from-your-harbor-registry-with-kubernetes/">
 <noscript>
     <style>
         #theme-toggle,
@@ -58,73 +63,7 @@ You then have a confirmation message from harbor, keep the secret : we will regi
         }
 
     </style>
-</noscript><meta property="og:title" content="Pull Images From Your Harbor Registry With Kubernetes" />
-<meta property="og:description" content="Pulling images from a private registry with kubernetes In this example I am going to use Harbor.
-For the sake of best practices and security we first have to create a robot account on harbor :
-Then select the harbor repo on which the robot account will have these permissions :
-You then have a confirmation message from harbor, keep the secret : we will register it into a kubernetes secret in our cluster." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hdelaunay.fr/posts/pull-images-from-your-harbor-registry-with-kubernetes/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-06-09T22:24:35+02:00" />
-<meta property="article:modified_time" content="2024-06-09T22:24:35+02:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Pull Images From Your Harbor Registry With Kubernetes"/>
-<meta name="twitter:description" content="Pulling images from a private registry with kubernetes In this example I am going to use Harbor.
-For the sake of best practices and security we first have to create a robot account on harbor :
-Then select the harbor repo on which the robot account will have these permissions :
-You then have a confirmation message from harbor, keep the secret : we will register it into a kubernetes secret in our cluster."/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://hdelaunay.fr/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Pull Images From Your Harbor Registry With Kubernetes",
-      "item": "https://hdelaunay.fr/posts/pull-images-from-your-harbor-registry-with-kubernetes/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Pull Images From Your Harbor Registry With Kubernetes",
-  "name": "Pull Images From Your Harbor Registry With Kubernetes",
-  "description": "Pulling images from a private registry with kubernetes In this example I am going to use Harbor.\nFor the sake of best practices and security we first have to create a robot account on harbor :\nThen select the harbor repo on which the robot account will have these permissions :\nYou then have a confirmation message from harbor, keep the secret : we will register it into a kubernetes secret in our cluster.",
-  "keywords": [
-    "kubernetes", "harbor"
-  ],
-  "articleBody": "Pulling images from a private registry with kubernetes In this example I am going to use Harbor.\nFor the sake of best practices and security we first have to create a robot account on harbor :\nThen select the harbor repo on which the robot account will have these permissions :\nYou then have a confirmation message from harbor, keep the secret : we will register it into a kubernetes secret in our cluster.\nNow that we’ve created the robot account we can login inside one of our cluster machine (the one you are using kubeadm on) and create a secret containing the robot account secret we’ve copied earlier.\nBeware that you should create the secret in the proper namespace !\nkubectl create secret docker-registry harbor-preprod-robot \\ --docker-server= --docker-username= --docker-password= -n --docker-server: you should put the registry fully qualified domain name but do not forget to add the project and repository path to the address. If our project on Harbor is named foo the the address should be : --docker-server=/foo. This is important because the robot account has rights only on this project and not on the other ones, not mentioning the project inside the docker-server address will result in an error during the image pull.\nThe secret is now active : You can verify its information with this command :\nkubectl get secret harbor-preprod-robot --output=\"jsonpath={.data.\\.dockerconfigjson}\" | base64 --decode And then decode the base64 encoded text with this one :\necho \"c3R...zE2\" | base64 --decode Finally, add the imagePullSecrets property and use the secret inside your deployment manifest : Here it is important to mention the tag of the image you want to pull in your deployment. Kubernetes want pull the “latest” image if you don’t specify it, the pull will just crash.\nYour deployment should now be fully ready to be created and in capacity to pull images from your private Harbor registry.\n",
-  "wordCount" : "315",
-  "inLanguage": "en",
-  "datePublished": "2024-06-09T22:24:35+02:00",
-  "dateModified": "2024-06-09T22:24:35+02:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://hdelaunay.fr/posts/pull-images-from-your-harbor-registry-with-kubernetes/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Hervé Delaunay",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://hdelaunay.fr/favicon.ico"
-    }
-  }
-}
-</script>
+</noscript>
 </head>
 
 <body class="" id="top">
@@ -142,9 +81,9 @@ You then have a confirmation message from harbor, keep the secret : we will regi
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://hdelaunay.fr/" accesskey="h" title="Hervé Delaunay (Alt + H)">Hervé Delaunay</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Hervé Delaunay (Alt + H)">Hervé Delaunay</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -168,22 +107,22 @@ You then have a confirmation message from harbor, keep the secret : we will regi
         </div>
         <ul id="menu">
             <li>
-                <a href="https://hdelaunay.fr/aboutme/" title="About">
+                <a href="http://localhost:1313/aboutme/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://hdelaunay.fr/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://hdelaunay.fr/archives/" title="Index">
+                <a href="http://localhost:1313/archives/" title="Index">
                     <span>Index</span>
                 </a>
             </li>
             <li>
-                <a href="https://hdelaunay.fr/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
@@ -205,33 +144,26 @@ You then have a confirmation message from harbor, keep the secret : we will regi
   <div class="post-content"><h2 id="pulling-images-from-a-private-registry-with-kubernetes">Pulling images from a private registry with kubernetes<a hidden class="anchor" aria-hidden="true" href="#pulling-images-from-a-private-registry-with-kubernetes">#</a></h2>
 <p>In this example I am going to use Harbor.</p>
 <p>For the sake of best practices and security we first have to create a robot account on harbor :</p>
-<p><img loading="lazy" src="/harbor-1.png" alt="harbor-1"  />
-</p>
-<p><img loading="lazy" src="/harbor-2.png" alt="harbor-2"  />
-</p>
-<p><img loading="lazy" src="/harbor-3.png" alt="harbor-3"  />
-</p>
+<p><img alt="harbor-1" loading="lazy" src="/harbor-1.png"></p>
+<p><img alt="harbor-2" loading="lazy" src="/harbor-2.png"></p>
+<p><img alt="harbor-3" loading="lazy" src="/harbor-3.png"></p>
 <p>Then select the harbor repo on which the robot account will have these permissions :</p>
-<p><img loading="lazy" src="/harbor-4.png" alt="harbor-4"  />
-</p>
+<p><img alt="harbor-4" loading="lazy" src="/harbor-4.png"></p>
 <p>You then have a confirmation message from harbor, keep the secret : we will register it into a kubernetes secret in our cluster.</p>
-<p><img loading="lazy" src="/harbor-5.png" alt="harbor-5"  />
-</p>
+<p><img alt="harbor-5" loading="lazy" src="/harbor-5.png"></p>
 <p>Now that we&rsquo;ve created the robot account we can login inside one of our cluster machine (the one you are using kubeadm on) and create a secret containing the robot account secret we&rsquo;ve copied earlier.</p>
 <p>Beware that you should create the secret in the proper namespace !</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl create secret docker-registry harbor-preprod-robot <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--docker-server<span style="color:#f92672">=</span>&lt;harbor-registry-fqdn&gt; --docker-username<span style="color:#f92672">=</span>&lt;robot-username&gt; --docker-password<span style="color:#f92672">=</span>&lt;robot-secret&gt; -n &lt;your-namespace&gt;
 </span></span></code></pre></div><p><code>--docker-server</code>: you should put the registry fully qualified domain name but do not forget to add the project and repository path to the address. If our project on Harbor is named <em>foo</em> the the address should be : <code>--docker-server=&lt;harbor-registry-fqdn&gt;/foo</code>. This is important because the robot account has rights only on this project and not on the other ones, not mentioning the project inside the docker-server address will result in an error during the image pull.</p>
 <p>The secret is now active :
-<img loading="lazy" src="/harbor-6.png" alt="harbor-6"  />
-</p>
+<img alt="harbor-6" loading="lazy" src="/harbor-6.png"></p>
 <p>You can verify its information with this command :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get secret harbor-preprod-robot --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.data.\.dockerconfigjson}&#34;</span> | base64 --decode
 </span></span></code></pre></div><p>And then decode the base64 encoded text with this one :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;c3R...zE2&#34;</span> | base64 --decode
 </span></span></code></pre></div><p>Finally, add the <code>imagePullSecrets</code> property and use the secret inside your deployment manifest :
-<img loading="lazy" src="/harbor-7.png" alt="harbor-7"  />
-</p>
+<img alt="harbor-7" loading="lazy" src="/harbor-7.png"></p>
 <p><strong>Here it is important to mention the tag of the image you want to pull in your deployment. Kubernetes want pull the &ldquo;latest&rdquo; image if you don&rsquo;t specify it, the pull will just crash.</strong></p>
 <p>Your deployment should now be fully ready to be created and in capacity to pull images from your private Harbor registry.</p>
 
@@ -240,15 +172,16 @@ You then have a confirmation message from harbor, keep the secret : we will regi
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://hdelaunay.fr/tags/kubernetes/">Kubernetes</a></li>
-      <li><a href="https://hdelaunay.fr/tags/harbor/">Harbor</a></li>
+      <li><a href="http://localhost:1313/tags/kubernetes/">Kubernetes</a></li>
+      <li><a href="http://localhost:1313/tags/harbor/">Harbor</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://hdelaunay.fr/">Hervé Delaunay</a></span>
+        <span>&copy; 2025 <a href="http://localhost:1313/">Hervé Delaunay</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

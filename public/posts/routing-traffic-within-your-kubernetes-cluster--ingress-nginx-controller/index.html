@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Routing Traffic Within Your Kubernetes Cluster : Ingress-Nginx Controller | Hervé Delaunay</title>
 <meta name="keywords" content="kubernetes, ingress">
 <meta name="description" content="I recently had to setup an Ingress in one of the Kubernetes cluster of my job, so I wrote a short explanation for my colleagues that are not aware of Kubernetes Ingresses and since it provide usefull explanations on it I figured I&rsquo;ll also share it here :
-Classic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes microservices available outside the cluster. It routes incoming requests to the appropriate services, much like a traditional load balancer.">
+Classic Ingress in Kubernetes
+An Ingress in Kubernetes is an object that makes microservices available outside the cluster. It routes incoming requests to the appropriate services, much like a traditional load balancer.">
 <meta name="author" content="">
-<link rel="canonical" href="https://hdelaunay.fr/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://hdelaunay.fr/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://hdelaunay.fr/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://hdelaunay.fr/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://hdelaunay.fr/apple-touch-icon.png">
-<link rel="mask-icon" href="https://hdelaunay.fr/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.08f7d74f0ada0f975d29ae436285b61ed7a719d05f350cb888d00341642995a2.css" integrity="sha256-CPfXTwraD5ddKa5DYoW2HtenGdBfNQy4iNADQWQplaI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://hdelaunay.fr/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,69 +57,7 @@ Classic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes m
         }
 
     </style>
-</noscript><meta property="og:title" content="Routing Traffic Within Your Kubernetes Cluster : Ingress-Nginx Controller" />
-<meta property="og:description" content="I recently had to setup an Ingress in one of the Kubernetes cluster of my job, so I wrote a short explanation for my colleagues that are not aware of Kubernetes Ingresses and since it provide usefull explanations on it I figured I&rsquo;ll also share it here :
-Classic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes microservices available outside the cluster. It routes incoming requests to the appropriate services, much like a traditional load balancer." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hdelaunay.fr/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-05-13T21:46:33+02:00" />
-<meta property="article:modified_time" content="2024-05-13T21:46:33+02:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Routing Traffic Within Your Kubernetes Cluster : Ingress-Nginx Controller"/>
-<meta name="twitter:description" content="I recently had to setup an Ingress in one of the Kubernetes cluster of my job, so I wrote a short explanation for my colleagues that are not aware of Kubernetes Ingresses and since it provide usefull explanations on it I figured I&rsquo;ll also share it here :
-Classic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes microservices available outside the cluster. It routes incoming requests to the appropriate services, much like a traditional load balancer."/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://hdelaunay.fr/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Routing Traffic Within Your Kubernetes Cluster : Ingress-Nginx Controller",
-      "item": "https://hdelaunay.fr/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Routing Traffic Within Your Kubernetes Cluster : Ingress-Nginx Controller",
-  "name": "Routing Traffic Within Your Kubernetes Cluster : Ingress-Nginx Controller",
-  "description": "I recently had to setup an Ingress in one of the Kubernetes cluster of my job, so I wrote a short explanation for my colleagues that are not aware of Kubernetes Ingresses and since it provide usefull explanations on it I figured I\u0026rsquo;ll also share it here :\nClassic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes microservices available outside the cluster. It routes incoming requests to the appropriate services, much like a traditional load balancer.",
-  "keywords": [
-    "kubernetes", "ingress"
-  ],
-  "articleBody": "I recently had to setup an Ingress in one of the Kubernetes cluster of my job, so I wrote a short explanation for my colleagues that are not aware of Kubernetes Ingresses and since it provide usefull explanations on it I figured I’ll also share it here :\nClassic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes microservices available outside the cluster. It routes incoming requests to the appropriate services, much like a traditional load balancer.\nWhen discussing Ingress, it generally involves two main elements:\nIngress Resource: These are the routing rules for incoming traffic. These rules determine how traffic is directed based on the request path, akin to a conventional load balancer. Ingress Controller: This controller exists within the cluster as a pod. It reads the rules from the Ingress resource and directs traffic accordingly. By default, the Ingress controller is only accessible within the cluster. Typically, it is exposed externally using a NodePort service. However, this is not the approach we’ve chosen.\nOn-Premises architecture considerations In cloud architectures the Ingress controller is automatically exposed through an external load balancer provisioned automatically by the cloud provider. In an on-premises architecture, we manage the external exposure of the Ingress controller ourselves (and this is the example we will study here).\nIngress-nginx-controller - Traffic Routing We employ an existing Ingress deployment , which exposes an nginx pod acting as reverse proxy within our cluster. Based on the Ingress resources, it routes traffic to the appropriate application pods.\nTo install it :\n# With helm helm upgrade --install ingress-nginx ingress-nginx \\ --repo https://kubernetes.github.io/ingress-nginx \\ --namespace ingress-nginx --create-namespace # With kubectl kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.1/deploy/static/provider/cloud/deploy.yaml The controller pod and the services should now be running :\nherve@master-node:~$ k get all -n ingress-nginx NAME READY STATUS RESTARTS AGE pod/ingress-nginx-controller-c8f499cfc-mmr7j 1/1 Running 0 11d NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/ingress-nginx-controller LoadBalancer 10.100.77.86 80:32729/TCP,443:32366/TCP 11d service/ingress-nginx-controller-admission ClusterIP 10.101.134.15 443/TCP 11d NAME READY UP-TO-DATE AVAILABLE AGE deployment.apps/ingress-nginx-controller 1/1 1 1 11d NAME DESIRED CURRENT READY AGE replicaset.apps/ingress-nginx-controller-c8f499cfc 1 1 1 11d This deployment includes three notable elements:\nnginx-ingress-controller pod: Reads the Ingress resource traffic rules and redirects traffic to ClusterIp services representing the correct pods. nginx-ingress-controller service: This Load Balancer type service exposes our ingress-controller pod outside the cluster. It accepts incoming requests and redirects them to the nginx-controller pod. If the deployment has multiple nginx-controller replicas, the service performs load balancing among these pods. nginx-controller-admission service: Ensures compliance of the Ingress rules before they are communicated to ETCD. Understanding this service is not crucial for basic operations. Thus, our Ingress routes traffic appropriately within our cluster, yet we still lack a node-level load balancing solution.\nHA-Proxy - Load Balancing For load balancing among cluster nodes, two solutions are available to us:\nHA-proxy Metal-lb We opted for HA-proxy. This service will run on a node with external exposure to the cluster, capturing client requests from outside the cluster and redistributing them across the Kubernetes nodes according to its load distribution algorithm, utilizing round-robin (equal distribution across all nodes).\nKeepalived for Resilience To enhance resilience we employ a dual HA-Proxy setup, where both machines are represented by a single virtual IP (VIP) through Keepalived. If the primary HA-Proxy server fails, the secondary takes over seamlessly, and the IP remains consistent throughout. This switch is transparent to the firewall, which consistently routes traffic to the same IP.\nAfter configuring the service, we should see two ip on the network interface of the main haproxy server :\nherve@hapxy1:~$ ip addr show 1: lo: mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000 link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 inet 127.0.0.1/8 scope host lo valid_lft forever preferred_lft forever inet6 ::1/128 scope host valid_lft forever preferred_lft forever 2: ens160: mtu 1500 qdisc mq state UP group default qlen 1000 link/ether 00:50:40:vb:05:x9 brd ff:ff:ff:ff:ff:ff altname enp3s0 inet 192.168.103.11/24 metric 100 brd 192.168.103.255 scope global dynamic ens160 valid_lft 675798sec preferred_lft 675798sec inet 192.168.103.10/24 brd 192.168.103.255 scope global secondary ens160 valid_lft forever preferred_lft forever inet6 fe80::250:56ff:feba:5d0/64 scope link valid_lft forever preferred_lft forever And only one in the backup haproxy network interface :\nnuageherve@hapxy2:~$ ip addr show 1: lo: mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000 link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 inet 127.0.0.1/8 scope host lo valid_lft forever preferred_lft forever inet6 ::1/128 scope host valid_lft forever preferred_lft forever 2: ens160: mtu 1500 qdisc mq state UP group default qlen 1000 link/ether 00:80:33:vb:c0:tu brd ff:ff:ff:ff:ff:ff altname enp3s0 inet 192.168.103.12/24 metric 100 brd 192.168.103.255 scope global dynamic ens160 valid_lft 522201sec preferred_lft 522201sec inet6 fe80::250:56ff:feba:c0cb/64 scope link valid_lft forever preferred_lft forever ",
-  "wordCount" : "764",
-  "inLanguage": "en",
-  "datePublished": "2024-05-13T21:46:33+02:00",
-  "dateModified": "2024-05-13T21:46:33+02:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://hdelaunay.fr/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Hervé Delaunay",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://hdelaunay.fr/favicon.ico"
-    }
-  }
-}
-</script>
+</noscript>
 </head>
 
 <body class="" id="top">
@@ -136,9 +75,9 @@ Classic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes m
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://hdelaunay.fr/" accesskey="h" title="Hervé Delaunay (Alt + H)">Hervé Delaunay</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Hervé Delaunay (Alt + H)">Hervé Delaunay</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -162,22 +101,22 @@ Classic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes m
         </div>
         <ul id="menu">
             <li>
-                <a href="https://hdelaunay.fr/aboutme/" title="About">
+                <a href="http://localhost:1313/aboutme/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://hdelaunay.fr/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://hdelaunay.fr/archives/" title="Index">
+                <a href="http://localhost:1313/archives/" title="Index">
                     <span>Index</span>
                 </a>
             </li>
             <li>
-                <a href="https://hdelaunay.fr/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
@@ -285,15 +224,16 @@ Classic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes m
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://hdelaunay.fr/tags/kubernetes/">Kubernetes</a></li>
-      <li><a href="https://hdelaunay.fr/tags/ingress/">Ingress</a></li>
+      <li><a href="http://localhost:1313/tags/kubernetes/">Kubernetes</a></li>
+      <li><a href="http://localhost:1313/tags/ingress/">Ingress</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://hdelaunay.fr/">Hervé Delaunay</a></span>
+        <span>&copy; 2025 <a href="http://localhost:1313/">Hervé Delaunay</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

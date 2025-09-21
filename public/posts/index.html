@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Posts | Hervé Delaunay</title>
 <meta name="keywords" content="">
 <meta name="description" content="Posts - Hervé Delaunay">
 <meta name="author" content="">
-<link rel="canonical" href="https://hdelaunay.fr/posts/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://hdelaunay.fr/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://hdelaunay.fr/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://hdelaunay.fr/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://hdelaunay.fr/apple-touch-icon.png">
-<link rel="mask-icon" href="https://hdelaunay.fr/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/posts/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.08f7d74f0ada0f975d29ae436285b61ed7a719d05f350cb888d00341642995a2.css" integrity="sha256-CPfXTwraD5ddKa5DYoW2HtenGdBfNQy4iNADQWQplaI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://hdelaunay.fr/posts/index.xml">
-<link rel="alternate" hreflang="en" href="https://hdelaunay.fr/posts/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,30 +56,7 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Posts" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://hdelaunay.fr/posts/" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content=""/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://hdelaunay.fr/posts/"
-    }
-  ]
-}
-</script>
+</noscript>
 </head>
 
 <body class="list" id="top">
@@ -97,9 +74,9 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://hdelaunay.fr/" accesskey="h" title="Hervé Delaunay (Alt + H)">Hervé Delaunay</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Hervé Delaunay (Alt + H)">Hervé Delaunay</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -123,22 +100,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://hdelaunay.fr/aboutme/" title="About">
+                <a href="http://localhost:1313/aboutme/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://hdelaunay.fr/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://hdelaunay.fr/archives/" title="Index">
+                <a href="http://localhost:1313/archives/" title="Index">
                     <span>Index</span>
                 </a>
             </li>
             <li>
-                <a href="https://hdelaunay.fr/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
@@ -154,15 +131,31 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Secure GitOps : Exposing Internal Kubernetes Services With Cloudflare Tunnels
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>It has been some time that I’ve been searching for a way to expose my self-hosted apps without opening my network to the internet. I’ve finally found the solution : Cloudflare tunnels. They only require an outbound connection and remove the need to expose any ports directly.
+Requirements:
+A Cloudflare-managed domain (you can also transfer an existing domain to Cloudflare) A Kubernetes cluster (in my case, managed with FluxCD following GitOps best practices) Authenticating and creating the tunnel First, download cloudflared on your machine
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-09-21 12:29:44 +0200 CEST'>September 21, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to Secure GitOps : Exposing Internal Kubernetes Services With Cloudflare Tunnels" href="http://localhost:1313/posts/secure-gitops--exposing-internal-kubernetes-services-with-cloudflare-tunnels/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Mastering Helm : A Journey to Dynamic Secret Generation
     </h2>
   </header>
   <div class="entry-content">
     <p>In the world of Kubernetes and Helm, managing secrets securely and efficiently is crucial, especially when dealing with production databases. This article chronicles my journey to implement a dynamic secret generation mechanism for a StatefulSet’s database container using Helm.
-My objective was to generate a password for the database container of a StatefulSet using Helm. The requirements were to create the secret during the initial installation, to reuse the same secret when upgrading the release and to ensure the secret persists even if the release is deleted...</p>
+My objective was to generate a password for the database container of a StatefulSet using Helm. The requirements were to create the secret during the initial installation, to reuse the same secret when upgrading the release and to ensure the secret persists even if the release is deleted
+...</p>
   </div>
   <footer class="entry-footer"><span title='2024-08-12 22:23:13 +0200 CEST'>August 12, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Mastering Helm : A Journey to Dynamic Secret Generation" href="https://hdelaunay.fr/posts/mastering-helm--a-journey-to-dynamic-secret-generation/"></a>
+  <a class="entry-link" aria-label="post link to Mastering Helm : A Journey to Dynamic Secret Generation" href="http://localhost:1313/posts/mastering-helm--a-journey-to-dynamic-secret-generation/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -173,10 +166,11 @@ My objective was to generate a password for the database container of a Stateful
   <div class="entry-content">
     <p>Today a colleague of mine who is new to Kubernetes asked me what was the CNI running on our production cluster, I knew the answer but I wanted to doublecheck, just to see if I could climb up to the source of truth.
 My first reflex was to search in the kube-system namespace for pods with a CNI-like name. And I quickly found what I was looking for :
-With this I was pretty sure Antrea was the chosen CNI, but I knew there were other ways to verify it....</p>
+With this I was pretty sure Antrea was the chosen CNI, but I knew there were other ways to verify it.
+...</p>
   </div>
   <footer class="entry-footer"><span title='2024-07-23 22:28:12 +0200 CEST'>July 23, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Which Cni Is Running in My Cluster ?" href="https://hdelaunay.fr/posts/which-cni-is-running-in-my-cluster/"></a>
+  <a class="entry-link" aria-label="post link to Which Cni Is Running in My Cluster ?" href="http://localhost:1313/posts/which-cni-is-running-in-my-cluster/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -185,10 +179,11 @@ With this I was pretty sure Antrea was the chosen CNI, but I knew there were oth
     </h2>
   </header>
   <div class="entry-content">
-    <p>Today at my job I managed to get our new product up and running on kubernetes, deployment and statefulsets are working but I wanted to test the app’s behavior while accessing it from the outside. As we have multiple services running on the cluster and as we want to secure the connection through TLS it is best to use an Ingress (resources and controllers). I already did the Ingress controller setup earlier, using Ingress-nginx-controller so I just had to create an Ingress-resources and I wanted to discuss about my process here....</p>
+    <p>Today at my job I managed to get our new product up and running on kubernetes, deployment and statefulsets are working but I wanted to test the app’s behavior while accessing it from the outside. As we have multiple services running on the cluster and as we want to secure the connection through TLS it is best to use an Ingress (resources and controllers). I already did the Ingress controller setup earlier, using Ingress-nginx-controller so I just had to create an Ingress-resources and I wanted to discuss about my process here.
+...</p>
   </div>
   <footer class="entry-footer"><span title='2024-06-22 10:26:00 +0200 CEST'>June 22, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Adding TLS to Your Ingress Traffic" href="https://hdelaunay.fr/posts/adding-tls-to-your-ingress-traffic/"></a>
+  <a class="entry-link" aria-label="post link to Adding TLS to Your Ingress Traffic" href="http://localhost:1313/posts/adding-tls-to-your-ingress-traffic/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -200,10 +195,11 @@ With this I was pretty sure Antrea was the chosen CNI, but I knew there were oth
     <p>Pulling images from a private registry with kubernetes In this example I am going to use Harbor.
 For the sake of best practices and security we first have to create a robot account on harbor :
 Then select the harbor repo on which the robot account will have these permissions :
-You then have a confirmation message from harbor, keep the secret : we will register it into a kubernetes secret in our cluster....</p>
+You then have a confirmation message from harbor, keep the secret : we will register it into a kubernetes secret in our cluster.
+...</p>
   </div>
   <footer class="entry-footer"><span title='2024-06-09 22:24:35 +0200 CEST'>June 9, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Pull Images From Your Harbor Registry With Kubernetes" href="https://hdelaunay.fr/posts/pull-images-from-your-harbor-registry-with-kubernetes/"></a>
+  <a class="entry-link" aria-label="post link to Pull Images From Your Harbor Registry With Kubernetes" href="http://localhost:1313/posts/pull-images-from-your-harbor-registry-with-kubernetes/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -213,10 +209,11 @@ You then have a confirmation message from harbor, keep the secret : we will regi
   </header>
   <div class="entry-content">
     <p>I recently had to setup an Ingress in one of the Kubernetes cluster of my job, so I wrote a short explanation for my colleagues that are not aware of Kubernetes Ingresses and since it provide usefull explanations on it I figured I’ll also share it here :
-Classic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes microservices available outside the cluster. It routes incoming requests to the appropriate services, much like a traditional load balancer....</p>
+Classic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes microservices available outside the cluster. It routes incoming requests to the appropriate services, much like a traditional load balancer.
+...</p>
   </div>
   <footer class="entry-footer"><span title='2024-05-13 21:46:33 +0200 CEST'>May 13, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Routing Traffic Within Your Kubernetes Cluster : Ingress-Nginx Controller" href="https://hdelaunay.fr/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/"></a>
+  <a class="entry-link" aria-label="post link to Routing Traffic Within Your Kubernetes Cluster : Ingress-Nginx Controller" href="http://localhost:1313/posts/routing-traffic-within-your-kubernetes-cluster--ingress-nginx-controller/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -227,15 +224,16 @@ Classic Ingress in Kubernetes An Ingress in Kubernetes is an object that makes m
   <div class="entry-content">
     <p>When you try to optimize the size of an image it is possible to display the size of every layers :
 docker history &lt;image-id&gt; For example :
-(ins)❯ docker history 7383c266ef25 IMAGE CREATED CREATED BY SIZE COMMENT 7383c266ef25 12 days ago CMD [&#34;nginx&#34; &#34;-g&#34; &#34;daemon off;&#34;] 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago STOPSIGNAL SIGQUIT 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago EXPOSE map[80/tcp:{}] 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago ENTRYPOINT [&#34;/docker-entrypoint.sh&#34;] 0B buildkit....</p>
+(ins)❯ docker history 7383c266ef25 IMAGE CREATED CREATED BY SIZE COMMENT 7383c266ef25 12 days ago CMD [&#34;nginx&#34; &#34;-g&#34; &#34;daemon off;&#34;] 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago STOPSIGNAL SIGQUIT 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago EXPOSE map[80/tcp:{}] 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago ENTRYPOINT [&#34;/docker-entrypoint.sh&#34;] 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago COPY 30-tune-worker-processes.sh /docker-ent… 4.62kB buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago COPY 20-envsubst-on-templates.sh /docker-ent… 3.02kB buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago COPY 15-local-resolvers.envsh /docker-entryp… 336B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago COPY 10-listen-on-ipv6-by-default.sh /docker… 2.12kB buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago COPY docker-entrypoint.sh / # buildkit 1.62kB buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago RUN /bin/sh -c set -x &amp;&amp; groupadd --syst… 113MB buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago ENV PKG_RELEASE=1~bookworm 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago ENV NJS_RELEASE=2~bookworm 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago ENV NJS_VERSION=0.8.4 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago ENV NGINX_VERSION=1.25.5 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago LABEL maintainer=NGINX Docker Maintainers &lt;d… 0B buildkit.dockerfile.v0 &lt;missing&gt; 12 days ago /bin/sh -c #(nop) CMD [&#34;bash&#34;] 0B &lt;missing&gt; 12 days ago /bin/sh -c #(nop) ADD file:4b1be1de1a1e5aa60… 74.8MB </p>
   </div>
   <footer class="entry-footer"><span title='2024-05-06 15:27:12 +0200 CEST'>May 6, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Optimizing Docker Images Size" href="https://hdelaunay.fr/posts/optimizing-docker-images-size/"></a>
+  <a class="entry-link" aria-label="post link to Optimizing Docker Images Size" href="http://localhost:1313/posts/optimizing-docker-images-size/"></a>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://hdelaunay.fr/">Hervé Delaunay</a></span>
+        <span>&copy; 2025 <a href="http://localhost:1313/">Hervé Delaunay</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
